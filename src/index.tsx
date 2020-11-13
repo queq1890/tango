@@ -4,6 +4,8 @@ import './index.css';
 import Root from './components/Root';
 import reportWebVitals from './reportWebVitals';
 
+import './tailwind.generated.css';
+
 ReactDOM.render(
   <React.StrictMode>
     <Root />
