@@ -20,10 +20,10 @@ const WordCardDescription: FC<Props> = ({ word }) => {
           <ul className="mt-2">
             <li>
               {description.meanings.map((meaning) => (
-                <div>{meaning}</div>
+                <div className="text-xl">{meaning}</div>
               ))}
 
-              <div className="mt-1">
+              <div className="mt-1 ml-2">
                 {description.examples.map((example) => (
                   <>
                     <div className="font-bold">
