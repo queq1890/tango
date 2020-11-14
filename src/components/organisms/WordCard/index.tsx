@@ -48,9 +48,12 @@ const WordCard: FC<Props> = ({ word }) => {
         )}
       </div>
 
-      <div onClick={toggle} className="text-lg">
+      <button
+        onClick={toggle}
+        className="p-2 rounded-lg relative shadow-sm bg-gray-200 active:bg-gray-700 w-32 font-semibold text-lg"
+      >
         {fullSize ? '閉じる' : '説明を読む'}
-      </div>
+      </button>
     </Card>
   );
 };
