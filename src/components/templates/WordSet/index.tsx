@@ -14,7 +14,7 @@ const WordSet = () => {
           <Twemoji emoji="🤔" />
         </button>
 
-        <button className="flex justify-center items-center flex-col p-4 rounded-lg relative shadow-sm  h-20 bg-blue-200 active:bg-blue-700 w-full ml-2 font-semibold text-2xl">
+        <button className="flex justify-center items-center flex-col p-4 rounded-lg relative shadow-sm h-20 bg-blue-200 active:bg-blue-700 w-full ml-2 font-semibold text-2xl">
           <Twemoji emoji="👍"></Twemoji>
         </button>
       </div>
