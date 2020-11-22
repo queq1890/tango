@@ -1,14 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { ApolloProvider, ApolloClient, InMemoryCache } from '@apollo/client';
+
 import './index.css';
 import Root from './components/Root';
 import reportWebVitals from './reportWebVitals';
 
 import './tailwind.generated.css';
 
+const client = new ApolloClient({
+  uri: 'http://localhost:4000/graphql',
+  cache: new InMemoryCache(),
+});
+
 ReactDOM.render(
   <React.StrictMode>
-    <Root />
+    <ApolloProvider client={client}>
+      <Root />
+    </ApolloProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
