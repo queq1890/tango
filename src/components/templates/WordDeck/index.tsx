@@ -10,13 +10,19 @@ type Props = {
 
 const WordDeck: FC<Props> = ({ loading, wordDeck }) => {
   const [index, setIndex] = useState(0);
+  const [fullSize, setFullSize] = useState(false);
   const words = wordDeck?.words ?? [];
   const total = words.length;
   const currentWord = words[index];
 
+  const toggleCard = () => {
+    setFullSize((val) => !val);
+  };
+
   const handleButtonClick = () => {
     if (index + 1 >= total) return;
     setIndex(index + 1);
+    setFullSize(false);
   };
 
   if (loading) return <div>loading...</div>;
@@ -24,7 +30,11 @@ const WordDeck: FC<Props> = ({ loading, wordDeck }) => {
   return (
     <div className="flex justify-end flex-col h-full">
       <div className="flex flex-col justify-center h-full w-full">
-        <WordCard word={currentWord} />
+        <WordCard
+          word={currentWord}
+          fullSize={fullSize}
+          toggleCard={toggleCard}
+        />
       </div>
 
       <div className="flex mt-4 justify-between">

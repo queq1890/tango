@@ -1,4 +1,4 @@
-import React, { useState, FC } from 'react';
+import React, { FC } from 'react';
 import Card from 'components/atoms/Card';
 import WordCardTitle from 'components/molecules/WordCardTitle';
 import WordCardDescription from 'components/molecules/WordCardDescription';
@@ -6,15 +6,11 @@ import { GetWordDeck_wordDeck_words } from 'types/generated/api';
 
 type Props = {
   word: GetWordDeck_wordDeck_words;
+  fullSize: boolean;
+  toggleCard: () => void;
 };
 
-const WordCard: FC<Props> = ({ word }) => {
-  const [fullSize, setFullSize] = useState(false);
-
-  const toggle = () => {
-    setFullSize((val) => !val);
-  };
-
+const WordCard: FC<Props> = ({ word, fullSize, toggleCard }) => {
   return (
     <Card
       height={fullSize ? 'h-full' : 'h-64'}
@@ -35,7 +31,7 @@ const WordCard: FC<Props> = ({ word }) => {
       </div>
 
       <button
-        onClick={toggle}
+        onClick={toggleCard}
         className="p-2 rounded-lg relative shadow-sm bg-gray-200 active:bg-gray-700 w-32 font-semibold text-lg"
       >
         {fullSize ? '閉じる' : '説明を読む'}
