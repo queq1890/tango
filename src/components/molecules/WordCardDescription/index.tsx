@@ -1,21 +1,21 @@
 import React, { FC } from 'react';
-import { Word } from 'types/models/Word';
 import Twemoji from 'components/atoms/Twemoji';
+import { GetWordDeck_wordDeck_words_descriptions } from 'types/generated/api';
 
 // TODO:
 // - i18n
 
 type Props = {
-  word: Word;
+  descriptions: GetWordDeck_wordDeck_words_descriptions[];
 };
 
-const WordCardDescription: FC<Props> = ({ word }) => {
+const WordCardDescription: FC<Props> = ({ descriptions }) => {
   return (
     <div className="flex flex-col">
-      {word.descriptions.map((description) => (
+      {descriptions.map((description) => (
         <>
           <div className="border border-solid border-gray-500 text-gray-700 rounded w-6 text-center">
-            {description.type === 'noun' && '名'}
+            {description.partsOfSpeech === 'NOUN' && '名'}
           </div>
           <ul className="mt-2">
             <li>

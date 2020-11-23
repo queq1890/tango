@@ -2,24 +2,10 @@ import React, { useState, FC } from 'react';
 import Card from 'components/atoms/Card';
 import WordCardTitle from 'components/molecules/WordCardTitle';
 import WordCardDescription from 'components/molecules/WordCardDescription';
+import { GetWordDeck_wordDeck_words } from 'types/generated/api';
 
 type Props = {
-  word: string;
-};
-
-const WORD_MOCK = {
-  descriptions: [
-    {
-      type: 'noun' as const,
-      meanings: ['フォー(ベトナムの麺)'],
-      examples: [
-        {
-          vn: 'Phở bò và phở gà thì anh thích phở nào hơn?',
-          ja: '牛肉入りのフォーと鶏肉入りのフォーとでは、どちらが好きですか？',
-        },
-      ],
-    },
-  ],
+  word: GetWordDeck_wordDeck_words;
 };
 
 const WordCard: FC<Props> = ({ word }) => {
@@ -39,11 +25,11 @@ const WordCard: FC<Props> = ({ word }) => {
           ${fullSize ? 'justify-start' : 'justify-center'}
         `}
       >
-        <WordCardTitle title={word} fullSize={fullSize} />
+        <WordCardTitle title={word.name} fullSize={fullSize} />
 
         {fullSize && (
           <div className="mt-2">
-            <WordCardDescription word={WORD_MOCK} />
+            <WordCardDescription descriptions={word.descriptions} />
           </div>
         )}
       </div>
