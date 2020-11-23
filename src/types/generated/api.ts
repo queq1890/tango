@@ -53,9 +53,65 @@ export interface GetWordBooks {
 // @generated
 // This file was automatically generated and should not be edited.
 
+// ====================================================
+// GraphQL query operation: GetWordDeck
+// ====================================================
+
+export interface GetWordDeck_wordDeck_words_descriptions_examples {
+  __typename: "Example";
+  id: number;
+  ja: string;
+  vn: string;
+}
+
+export interface GetWordDeck_wordDeck_words_descriptions {
+  __typename: "Description";
+  id: number;
+  partsOfSpeech: PartsOfSpeech;
+  meanings: string[];
+  examples: GetWordDeck_wordDeck_words_descriptions_examples[];
+}
+
+export interface GetWordDeck_wordDeck_words {
+  __typename: "Word";
+  id: number;
+  name: string;
+  descriptions: GetWordDeck_wordDeck_words_descriptions[];
+}
+
+export interface GetWordDeck_wordDeck {
+  __typename: "WordDeck";
+  id: number;
+  words: GetWordDeck_wordDeck_words[];
+}
+
+export interface GetWordDeck {
+  wordDeck: GetWordDeck_wordDeck | null;
+}
+
+export interface GetWordDeckVariables {
+  id?: number | null;
+}
+
+/* tslint:disable */
+/* eslint-disable */
+// @generated
+// This file was automatically generated and should not be edited.
+
 //==============================================================
 // START Enums and Input Objects
 //==============================================================
+
+export enum PartsOfSpeech {
+  ADJECTIVE = "ADJECTIVE",
+  ADVERB = "ADVERB",
+  CONJUNCTION = "CONJUNCTION",
+  INTERJUNCTION = "INTERJUNCTION",
+  NOUN = "NOUN",
+  PREPOSITION = "PREPOSITION",
+  PRONOUN = "PRONOUN",
+  VERB = "VERB",
+}
 
 //==============================================================
 // END Enums and Input Objects
