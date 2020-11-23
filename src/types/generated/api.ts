@@ -7,19 +7,11 @@
 // GraphQL query operation: GetWordBooks
 // ====================================================
 
-export interface GetWordBooks_wordBooks_wordDecks {
-  __typename: "WordDeck";
-  id: number;
-  title: string;
-  summary: string;
-}
-
 export interface GetWordBooks_wordBooks {
   __typename: "WordBook";
   id: number;
   title: string;
   summary: string;
-  wordDecks: GetWordBooks_wordBooks_wordDecks[];
 }
 
 export interface GetWordBooks {

@@ -4,7 +4,7 @@ import Twemoji from 'components/atoms/Twemoji';
 
 const WordDeck = () => {
   return (
-    <div className="flex justify-end flex-col p-4 h-full">
+    <div className="flex justify-end flex-col h-full">
       <div className="flex flex-col justify-center h-full w-full">
         <WordCard word="phở" />
       </div>
