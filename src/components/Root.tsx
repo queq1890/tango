@@ -3,7 +3,7 @@ import React, { Suspense, lazy } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { GetWordBooks_wordBooks } from 'types/generated/api';
 
-const WordSet = lazy(() => import('./pages/WordSet'));
+const WordDeck = lazy(() => import('./pages/WordDeck'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 
 // TODO: suspense fallback component
@@ -33,7 +33,7 @@ const Root = () => {
       <Suspense fallback={null}>
         <BrowserRouter>
           <Switch>
-            <Route exact path="/" component={WordSet} />
+            <Route exact path="/" component={WordDeck} />
             <Route path="*" component={NotFound} />
           </Switch>
         </BrowserRouter>

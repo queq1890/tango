@@ -2,7 +2,7 @@ import React from 'react';
 import WordCard from 'components/organisms/WordCard';
 import Twemoji from 'components/atoms/Twemoji';
 
-const WordSet = () => {
+const WordDeck = () => {
   return (
     <div className="flex justify-end flex-col p-4 h-full">
       <div className="flex flex-col justify-center h-full w-full">
@@ -22,4 +22,4 @@ const WordSet = () => {
   );
 };
 
-export default WordSet;
+export default WordDeck;
