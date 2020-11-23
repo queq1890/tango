@@ -11,7 +11,7 @@ const NotFound = lazy(() => import('./pages/NotFound'));
 const Root = () => {
   return (
     <div className="h-screen bg-gray-200">
-      <div className=" p-4 ">
+      <div className="h-full p-4 ">
         <Suspense fallback={null}>
           <BrowserRouter>
             <Switch>

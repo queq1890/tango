@@ -1,5 +1,5 @@
 import React from 'react';
-import { useGetWordBooksQuery } from './useWordBooks';
+import { useGetWordBooksQuery } from './useGetWordBooksQuery';
 import WordBookList from 'components/templates/WordBookList';
 
 const WordBookListPage = () => {

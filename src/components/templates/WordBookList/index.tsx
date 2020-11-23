@@ -15,7 +15,7 @@ const WordBookList: FC<Props> = ({ wordBooks, loading }) => {
     <div className="flex flex-col">
       <div className="font-bold text-3xl flex flex-row mb-4">
         <Twemoji emoji="📕" />
-        <div className="font-bold ml-2">単語カード一覧</div>
+        <div className="font-bold ml-2">単語帳</div>
       </div>
 
       <div className="flex flex-col">
