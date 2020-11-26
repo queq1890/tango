@@ -1,4 +1,5 @@
 import Twemoji from 'components/atoms/Twemoji';
+import Header from 'components/molecules/Header';
 import React, { FC } from 'react';
 import { Link } from 'react-router-dom';
 import { GetWordBooks_wordBooks } from 'types/generated/api';
@@ -13,11 +14,7 @@ const WordBookList: FC<Props> = ({ wordBooks, loading }) => {
 
   return (
     <div className="flex flex-col">
-      <div className="font-bold text-3xl flex flex-row mb-4">
-        <Twemoji emoji="📕" />
-        <div className="font-bold ml-2">単語帳</div>
-      </div>
-
+      <Header title="単語帳" />
       <div className="flex flex-col">
         {wordBooks &&
           wordBooks.map((wordBook) => (
