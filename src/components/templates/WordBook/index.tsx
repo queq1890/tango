@@ -1,6 +1,6 @@
-import Twemoji from 'components/atoms/Twemoji';
+import Header from 'components/molecules/Header';
 import React, { FC } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { GetWordBook_wordBook } from 'types/generated/api';
 
 type Props = {
@@ -9,14 +9,17 @@ type Props = {
 };
 
 const WordBook: FC<Props> = ({ loading, wordBook }) => {
+  const history = useHistory();
   if (loading) return <div>loading...</div>;
 
   return (
     <div className="flex flex-col">
-      <div className="font-bold text-3xl flex flex-row mb-4">
-        <Twemoji emoji="📒" />
-        <div className="font-bold ml-2">単語カード</div>
-      </div>
+      <Header
+        title="単語カード一覧"
+        goBack={() => {
+          history.goBack();
+        }}
+      />
 
       <div className="flex flex-col">
         {wordBook &&
