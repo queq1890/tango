@@ -1,4 +1,3 @@
-import Twemoji from 'components/atoms/Twemoji';
 import Header from 'components/molecules/Header';
 import React, { FC } from 'react';
 import { Link } from 'react-router-dom';
